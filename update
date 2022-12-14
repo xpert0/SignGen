@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Press 1 to continue and press 2 to cancel"
+read ch
+clear
+if [ $ch -eq 1 ];then
+cd
+cp -r ~/SignGen/update ~
+chmod +x *
+bash ~/update
+clear
+rm -rff ~/SignGen
+cd
+git clone https://github.com/xpert0/SignGen
+clear
+cd ~/SignGen
+rm -rff ~/update
+clear
+elif [ $ch -eq 2 ];then
+cd
+cd ~/SignGen
+clear
+else
+echo -e "\e[1;31m Invalid Input \e[0m"
+bash ~/SignGen/update
+fi
