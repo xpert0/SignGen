@@ -20,7 +20,7 @@ mkdir /storage/emulated/0/key/
 
 mkdir /storage/emulated/0/key/gen
 
-echo -e "\e[1;33m Please copy your Java keystore(with .jks extension) file to the following directory (internal storage/key/gen)... NOTE 1: Keep termux running in the background... NOTE 2: There should be only one keystore file in the above mentioned directory... NOTE 3: If asked for password write the alias password of the keystore file and hit enter everytime... NOTE 4: The password will not be visible for security reasons, so do not worry about that... Press y and hit enter after copying the keystore file... \e[0m"
+echo -e "\e[1;33m Please copy your Java keystore(with .jks extension) file to the following directory (internal storage/key/gen)... NOTE 1: Keep termux running in the background... NOTE 2: There should be only one keystore file in the above mentioned directory... NOTE 3: When asked for password write the alias password of the keystore file and hit enter everytime(total 5 times)... NOTE 4: The password will not be visible for security reasons, so do not worry about that... Press y and hit enter after copying the keystore file... \e[0m"
 
 echo   
 
@@ -50,7 +50,7 @@ clear
 
 openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12 -nodes -out /storage/emulated/0/key/tmp/key.rsa.pem
 
-clear
+
 
 openssl pkcs8 -topk8 -outform DER -in /storage/emulated/0/key/tmp/key.rsa.pem -inform PEM -out /storage/emulated/0/key/gen/privkey.pk8 -nocrypt
 
