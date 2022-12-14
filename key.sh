@@ -54,7 +54,7 @@ openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12 -nodes -out /storage/emul
 
 openssl pkcs8 -topk8 -outform DER -in /storage/emulated/0/key/tmp/key.rsa.pem -inform PEM -out /storage/emulated/0/key/gen/privkey.pk8 -nocrypt
 
-clear
+
 
 rm -rff /storage/emulated/0/key/cert.x509.pem
 
