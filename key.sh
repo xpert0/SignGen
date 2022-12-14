@@ -32,7 +32,7 @@ echo
 
 mkdir /storage/emulated/0/key/gen
 
-echo -e "\e[1;33m Please copy your Java keystore(with .jks extension) file to the following directory (internal storage/key/gen)... NOTE 1: Keep termux running in the background... NOTE 2: There should be only one keystore file in the above mentioned directory... NOTE 3: When asked for password write the alias password of the keystore file and hit enter everytime(total 5 times, enter import password twice)... NOTE 4: The password will not be visible for security reasons, so do not worry about that... Press y and hit enter after copying the keystore file... \e[0m"
+echo -e "\e[1;33m Please copy your Java keystore(with .jks extension) file to the following directory (internal storage/key/gen)... NOTE 1: Keep termux running in the background... NOTE 2: There should be only one keystore file in the above mentioned directory... NOTE 3: When asked for password write the alias password of the keystore file and hit enter everytime(total 5 times, enter import password twice)... NOTE 4: The password will not be visible for security reasons, so do not worry about that... Press 1 and hit enter after copying the keystore file... \e[0m"
 
 echo   
 
@@ -62,7 +62,7 @@ keytool -importkeystore -srckeystore /storage/emulated/0/key/tmp/*.jks -destkeys
 
 clear
 
-openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12  -nokeys -out /storage/emulated/0/key/gen/cert.x509.pem
+openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12  -nokeys -out /storage/emulated/0/key/gen/pcert.x509.pem
 
 openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12 -nodes -out /storage/emulated/0/key/tmp/key.rsa.pem
 
@@ -72,21 +72,21 @@ openssl pkcs8 -topk8 -outform DER -in /storage/emulated/0/key/tmp/key.rsa.pem -i
 
 clear
 
-rm -rff /storage/emulated/0/key/cert.x509.pem
+rm -rff /storage/emulated/0/key/pcert.x509.pem
 
 rm -rff /storage/emulated/0/key/privkey.pk8
 
 rm -rff /storage/emulated/0/key/tmp
 
-cp -r /storage/emulated/0/key/gen/cert.x509.pem /storage/emulated/0/key
+cp -r /storage/emulated/0/key/gen/pcert.x509.pem /storage/emulated/0/key
 
-cp -r /storage/emulated/0/key/gen/*.pk8 /storage/emulated/0/key
+cp -r /storage/emulated/0/key/gen/privkey.pk8 /storage/emulated/0/key
 
 rm -rff  /storage/emulated/0/key/gen
 
 clear
 
-echo -e "\e[1;32m Thanks for using my script \e[0m"
+echo -e "\e[1;32m 🙂😇Thanks for using my script😇😎 \e[0m"
 
 cd
 
