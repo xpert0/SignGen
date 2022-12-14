@@ -2,7 +2,7 @@
 
 clear
 
-echo -e "\e[1;31m {Allow Storage permission... If prompted press y and hit enter to continue... Carefully read and follow the instructions for success..}(To update this tool run "bash ~/SignGen/update") \e[0m"
+echo -e "\e[1;31m {Allow Storage permission... If prompted press y and hit enter to continue... Carefully read and follow the instructions for success..}(To update this tool run "cd && bash ~/SignGen/update") \e[0m"
 
 read -p "press any key and hit enter to continue ..."
 
