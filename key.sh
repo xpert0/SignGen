@@ -6,7 +6,7 @@ echo {Allow Storage permission... If prompted press y and hit enter everytime to
 
 termux-setup-storage
 
-clear
+
 
 termux-setup-storage
 
