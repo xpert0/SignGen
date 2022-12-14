@@ -1,5 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+clear
+
+echo {Allow Storage permission... If prompted press y and hit enter to continue}
+
+termux-setup-storage
+
+clear
+
 echo -e "\e[1;31m Script created by 4RCH1 H4CK3R \e[0m"
 
 echo    
