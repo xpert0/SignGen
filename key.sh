@@ -2,7 +2,11 @@
 
 clear
 
-echo {Allow Storage permission... If prompted press y and hit enter to continue}
+echo {Allow Storage permission... If prompted press y and hit enter everytime to continue}
+
+termux-setup-storage
+
+clear
 
 termux-setup-storage
 
