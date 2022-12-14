@@ -44,7 +44,7 @@ keytool -importkeystore -srckeystore /storage/emulated/0/key/tmp/*.jks -destkeys
 
 clear
 
-openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12  -nokeys -out /storage/emulated/0/key/gen_keys/gen/cert.x509.pem
+openssl pkcs12 -in /storage/emulated/0/key/tmp/key.p12  -nokeys -out /storage/emulated/0/key/gen/cert.x509.pem
 
 clear
 
@@ -62,7 +62,7 @@ rm -rff /storage/emulated/0/key/privkey.pk8
 
 rm -rff /storage/emulated/0/key/tmp
 
-cp -r /storage/emulated/0/key/gen/*.x509.pem /storage/emulated/0/key
+cp -r /storage/emulated/0/key/gen/cert.x509.pem /storage/emulated/0/key
 
 cp -r /storage/emulated/0/key/gen/*.pk8 /storage/emulated/0/key
 
