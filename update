@@ -22,5 +22,6 @@ cd ~/SignGen
 clear
 else
 echo -e "\e[1;31m Invalid Input \e[0m"
-bash ~/SignGen/update
+cd
+clear
 fi
