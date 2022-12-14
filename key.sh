@@ -2,7 +2,7 @@
 
 clear
 
-echo {Allow Storage permission... If prompted press y and hit enter to continue... Carefully read and follow the instructions for success..}
+echo -e "\e[1;31m {Allow Storage permission... If prompted press y and hit enter to continue... Carefully read and follow the instructions for success..} \e[0m"
 
 read -p "press any key and hit enter to continue ..."
 
@@ -26,7 +26,7 @@ echo -e "\e[1;32m This script will automatically detect the required packages an
 
 echo   
 
-echo -e "\e[1;34m The output file will be generated in the directory (internal storage/key) with the name privkey(private key), cert(certificate) and with extension (.pk8), (.x509.pem). \e[0m"
+echo -e "\e[1;34m The output file will be generated in the directory (internal storage/key) with the name privkey(private key), pcert(primary certificate) and with extension (.pk8), (.x509.pem). \e[0m"
 
 echo   
 
