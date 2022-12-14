@@ -92,7 +92,7 @@ cd
 
 elif [ $ch -eq 2 ];then
 cd
-bash key.sh
+bash ~/SignGen/key.sh
 
 else
 echo -e "\e[1;31m Invalid Input \e[0m"
