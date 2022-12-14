@@ -72,4 +72,4 @@ clear
 
 echo -e "\e[1;32m Thanks for using my script \e[0m"
 
-cd
+cd ~
