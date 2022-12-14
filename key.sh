@@ -2,13 +2,15 @@
 
 clear
 
-echo {Allow Storage permission... If prompted press y and hit enter everytime to continue}
+echo {Allow Storage permission... If prompted press y and hit enter to continue... Carefully read and follow the instructions for success..}
+
+read -p "press any key and hit enter to continue ..."
 
 termux-setup-storage
 
+read -p "press any key and hit enter to continue ..."
 
-
-termux-setup-storage
+mkdir /storage/emulated/0/key
 
 clear
 
@@ -20,7 +22,7 @@ echo -e "\e[1;31m This script is only for Java keystore(.jks) files Generated wi
 
 echo   
 
-echo -e "\e[1;32m This script will automatically detect the required packages and install them if not available... Allow Storage permission to termux in settings (If not allowed) before using this script... \e[0m"
+echo -e "\e[1;32m This script will automatically detect the required packages and install them if not available... Allow Storage permission to termux (If not allowed) before using this script... \e[0m"
 
 echo   
 
@@ -28,16 +30,16 @@ echo -e "\e[1;34m The output file will be generated in the directory (internal s
 
 echo   
 
-mkdir /storage/emulated/0/key/
-
 mkdir /storage/emulated/0/key/gen
 
 echo -e "\e[1;33m Please copy your Java keystore(with .jks extension) file to the following directory (internal storage/key/gen)... NOTE 1: Keep termux running in the background... NOTE 2: There should be only one keystore file in the above mentioned directory... NOTE 3: When asked for password write the alias password of the keystore file and hit enter everytime(total 5 times, enter import password twice)... NOTE 4: The password will not be visible for security reasons, so do not worry about that... Press y and hit enter after copying the keystore file... \e[0m"
 
 echo   
 
-termux-setup-storage
-
+echo "copied the keystore file (1=yes/2=no)?"
+    read ch
+    clear
+    if [ $ch -eq 1 ];then
 mkdir /storage/emulated/0/key/tmp
 
 cp -r /storage/emulated/0/key/gen/*.jks /storage/emulated/0/key/tmp
@@ -83,3 +85,13 @@ clear
 echo -e "\e[1;32m Thanks for using my script \e[0m"
 
 exit
+
+    elif [ $ch -eq 2 ];then
+cd
+bash key.sh
+
+    else
+echo -e "\e[1;31m Invalid Input \e[0m"
+cd
+
+fi
