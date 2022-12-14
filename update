@@ -10,8 +10,6 @@ cp -r ~/SignGen/update ~
 
 chmod +x *
 
-bash ~/update
-
 clear
 
 rm -rff ~/SignGen
@@ -25,3 +23,6 @@ cd ~/SignGen
 clear
 
 rm -rff ~/update
+
+clear
+
