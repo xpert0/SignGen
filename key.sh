@@ -37,9 +37,13 @@ echo -e "\e[1;33m Please copy your Java keystore(with .jks extension) file to th
 echo   
 
 echo "copied the keystore file (1=yes/2=no)?"
-    read ch
-    clear
-    if [ $ch -eq 1 ];then
+
+read ch
+
+clear
+
+if [ $ch -eq 1 ];then
+
 mkdir /storage/emulated/0/key/tmp
 
 cp -r /storage/emulated/0/key/gen/*.jks /storage/emulated/0/key/tmp
@@ -84,13 +88,13 @@ clear
 
 echo -e "\e[1;32m Thanks for using my script \e[0m"
 
-exit
+cd
 
-    elif [ $ch -eq 2 ];then
+elif [ $ch -eq 2 ];then
 cd
 bash key.sh
 
-    else
+else
 echo -e "\e[1;31m Invalid Input \e[0m"
 cd
 
