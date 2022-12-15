@@ -14,15 +14,15 @@ read -p "press any key and hit enter to continue ..."
 
 clear
 
-echo -e "\e[1;31m Script created by 4RCH1 H4CK3R \e[0m"
+echo -e "\e[1;31m Tool created by 4RCH1 H4CK3R \e[0m"
 
 echo    
 
-echo -e "\e[1;31m This script is only for Java keystore(.jks) files Generated with keystore explorer app (recommended)... \e[0m"
+echo -e "\e[1;31m This tool is only for Java keystore(.jks) files Generated with keystore explorer app (recommended)... \e[0m"
 
 echo   
 
-echo -e "\e[1;32m This script will automatically detect the required packages and install them if not available... Allow Storage permission to termux (If not allowed) before using this script... \e[0m"
+echo -e "\e[1;32m This tool will automatically detect the required packages and install them if not available... Allow Storage permission to termux (If not allowed) before using this script... \e[0m"
 
 echo   
 
@@ -36,7 +36,9 @@ read my_var
 
 echo   
 
-mkdir /storage/emulated/0/tmp
+mkdir /storage/emulated/0/.{tmpkey}
+
+clear
 
 echo -e "\e[1;33m NOTE 1: When asked for password write the alias password of the keystore file and hit enter everytime(total 5 times, enter import password twice)... NOTE 2: The password will not be visible for security reasons, so do not worry about that... \e[0m"
 
@@ -48,7 +50,7 @@ read -p "If yes press any key and hit enter to continue ..."
 
 clear
 
-cp -r ${my_var}/*.jks /storage/emulated/0/tmp
+cp -r ${my_var}/*.jks /storage/emulated/0/.{tmpkey}
 
 clear
 
@@ -60,33 +62,35 @@ pkg install openjdk-17 -y
 
 clear
 
-keytool -importkeystore -srckeystore /storage/emulated/0/tmp/*.jks -destkeystore /storage/emulated/0/tmp/key.p12 -srcstoretype JKS -deststoretype PKCS12
+keytool -importkeystore -srckeystore /storage/emulated/0/.{tmpkey}/*.jks -destkeystore /storage/emulated/0/.{tmpkey}/key.p12 -srcstoretype JKS -deststoretype PKCS12
 
 clear
 
-openssl pkcs12 -in /storage/emulated/0/tmp/key.p12  -nokeys -out /storage/emulated/0/tmp/pcert.x509.pem
+openssl pkcs12 -in /storage/emulated/0/.{tmpkey}/key.p12  -nokeys -out /storage/emulated/0/.{tmpkey}/pcert.x509.pem
 
-openssl pkcs12 -in /storage/emulated/0/tmp/key.p12 -nodes -out /storage/emulated/0/tmp/key.rsa.pem
-
-clear
-
-openssl pkcs8 -topk8 -outform DER -in /storage/emulated/0/tmp/key.rsa.pem -inform PEM -out /storage/emulated/0/tmp/privkey.pk8 -nocrypt
+openssl pkcs12 -in /storage/emulated/0/.{tmpkey}/key.p12 -nodes -out /storage/emulated/0/.{tmpkey}/key.rsa.pem
 
 clear
 
-echo "Please enter the output directory to save the file ..."
+openssl pkcs8 -topk8 -outform DER -in /storage/emulated/0/.{tmpkey}/key.rsa.pem -inform PEM -out /storage/emulated/0/.{tmpkey}/privkey.pk8 -nocrypt
+
+clear
+
+echo "Please enter the output directory path (You should enter the path of an existing directory) to save the file ..."
 
 read my_var
+
+clear
 
 rm -rff ${my_var}/pcert.x509.pem
 
 rm -rff ${my_var}/privkey.pk8
 
-cp -r /storage/emulated/0/tmp/pcert.x509.pem ${my_var}
+cp -r /storage/emulated/0/.{tmpkey}/pcert.x509.pem ${my_var}
 
-cp -r /storage/emulated/0/tmp/privkey.pk8 ${my_var}
+cp -r /storage/emulated/0/.{tmpkey}/privkey.pk8 ${my_var}
 
-rm -rff  /storage/emulated/0/tmp
+rm -rff  /storage/emulated/0/.{tmpkey}
 
 clear
 
