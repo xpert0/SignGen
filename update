@@ -14,4 +14,8 @@ cd ~
 
 clear
 
-echo -e "\e[1;32m Run ' bash ~/SignGen/convert ' to use the tool \e[0m"
+echo -e "\e[1;32m SUCCESS \e[0m"
+
+echo -e "\e[1;32m Run ' bash ~/SignGen/convert ' if you want to use the tool now \e[0m"
+
+cd ~
