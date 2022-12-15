@@ -40,7 +40,7 @@ mkdir /storage/emulated/0/.{tmpkey}
 
 clear
 
-echo -e "\e[1;33m NOTE1: When asked for password write the alias password of the keystore file and hit enter everytime(total 5\ntimes, enter import password twice)...\nNOTE2: The password will not be visible for security\nreasons, so do not worry about that... \e[0m"
+echo -e "\e[1;33m NOTE1: When asked for password write the alias password of the keystore file and hit enter everytime(total 5\ntimes, enter import password twice)...\n\nNOTE2: The password will not be visible for security\nreasons, so do not worry about that... \e[0m"
 
 echo   
 
