@@ -2,7 +2,7 @@
 
 clear
 
-echo -e "\e[1;31m {Allow Storage permission... If prompted for directory '~/storage' press y and hit enter to continue... Carefully read and follow the instructions for success..}(To update this tool press CTRL+c and then run) \e[0m"
+echo -e "\e[1;31m Allow Storage permission...\nIf prompted (for directory '~/storage') press y and hit enter to continue...\nCarefully read and follow the instructions for success..\nTo update this tool press CTRL+c and then run \e[0m"
 
 echo -e "\e[1;32m clear && cd ~ && bash ~/SignGen/update \e[0m"
 
