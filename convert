@@ -6,11 +6,15 @@ echo -e "\e[1;31m Allow Storage permission...\nIf prompted (for directory '~/sto
 
 echo -e "\e[1;32m clear && cd ~ && bash ~/SignGen/update \e[0m"
 
-read -p "press any key and hit enter to use this tool ..."
+read -p "Hit enter to use this tool ..."
 
 termux-setup-storage
 
-read -p "press any key and hit enter to continue ..."
+clear
+
+echo -e "\e[1;32m storage permission granted \e[0m"
+
+read -p "Hit enter to continue ..."
 
 clear
 
@@ -46,7 +50,7 @@ echo
 
 echo -e "\e[1;31m Have you read the instructions carefully ? \e[0m"
 
-read -p "If yes press any key and hit enter to continue ..."
+read -p "If yes hit enter to continue ..."
 
 clear
 
