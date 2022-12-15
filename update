@@ -2,27 +2,16 @@
 
 clear
 
-read -p "press any key and hit enter to continue ..."
-
-cd
-
-cp -r ~/SignGen/update ~
-
-chmod +x *
-
-clear
+cd ~
 
 rm -rff ~/SignGen
 
-cd
+cd ~
 
 git clone https://github.com/xpert0/SignGen
 
-cd ~/SignGen
+cd ~
 
 clear
 
-rm -rff ~/update
-
-clear
-
+echo "\e[1;32m Run ' bash ~/SignGen/convert ' to use the tool \e[0m"
