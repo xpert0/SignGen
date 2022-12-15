@@ -18,19 +18,19 @@ echo -e "\e[1;31m Tool created by 4RCH1 H4CK3R \e[0m"
 
 echo    
 
-echo -e "\e[1;31m This tool is only for Java keystore(.jks) files Generated with keystore explorer app (recommended)... \e[0m"
+echo -e "\e[1;31m This tool is only for Java keystore(.jks) files\nGenerated with keystore explorer app (recommended)... \e[0m"
 
 echo   
 
-echo -e "\e[1;32m This tool will automatically detect the required packages and install them if not available... Allow Storage permission to termux (If not allowed) before using this script... \e[0m"
+echo -e "\e[1;32m This tool will automatically detect the required\npackages and install them if not available...\nAllow Storage permission to termux (If not allowed) before using this script... \e[0m"
 
 echo   
 
-echo -e "\e[1;34m The output file will be generated with the name privkey(private key), pcert(primary certificate) and with extension (.pk8), (.x509.pem). \e[0m"
+echo -e "\e[1;34m The output file will be generated with the name privkey(private key), pcert(primary certificate) and with\nextension (.pk8), (.x509.pem). \e[0m"
 
-echo "Please enter the location path of the directory (which contains your keystore file) below and hit enter..."
+echo "Please enter the location path of the directory (which\ncontains your keystore file) below and hit enter..."
 
-echo -e "\e[1;31m NOTE : There should be only one keystore file in the directory... \e[0m"
+echo -e "\e[1;31m NOTE : There should be only one keystore file in the\ndirectory... \e[0m"
 
 read my_var
 
