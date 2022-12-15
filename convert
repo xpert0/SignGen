@@ -28,7 +28,7 @@ echo
 
 echo -e "\e[1;34m The output file will be generated with the name privkey(private key), pcert(primary certificate) and with\nextension (.pk8), (.x509.pem). \e[0m"
 
-echo "Please enter the location path of the directory which\ncontains your keystore file below and hit enter..."
+echo -e "Please enter the location path of the directory which\ncontains your keystore file below and hit enter..."
 
 echo -e "\e[1;31m NOTE : There should be only one keystore file in the\ndirectory... \e[0m"
 
@@ -40,7 +40,7 @@ mkdir /storage/emulated/0/.{tmpkey}
 
 clear
 
-echo -e "\e[1;33m NOTE 1: When asked for password write the alias password of the keystore file and hit enter everytime(total 5 times, enter import password twice)... NOTE 2: The password will not be visible for security reasons, so do not worry about that... \e[0m"
+echo -e "\e[1;33m NOTE1: When asked for password write the alias password of the keystore file and hit enter everytime(total 5\ntimes, enter import password twice)...\nNOTE2: The password will not be visible for security\nreasons, so do not worry about that... \e[0m"
 
 echo   
 
